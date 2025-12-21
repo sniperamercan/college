@@ -1,0 +1,194 @@
+You are a senior full-stack engineer and UI/UX designer.
+
+This project already has a working “Events & Schedule” section:
+- Events listing
+- Event cards with date & location
+- Event details page/modal
+- Admin can create events
+
+IMPORTANT RULES:
+- DO NOT rewrite or remove existing Events & Schedule code
+- DO NOT change the tech stack
+- ONLY extend and upgrade the current Events system
+- Keep all existing functionality working
+
+Your task is to upgrade Events & Schedule into a fully featured,
+scalable, university-grade event management system.
+DO NOT add comments or discussion to events.
+
+────────────────────────
+1) EVENTS DATA MODEL (EXTEND EXISTING)
+────────────────────────
+Extend the existing Event model with the following fields:
+
+- title (string)
+- description (string, rich text)
+- category (enum):
+  - Academic
+  - Sports
+  - Cultural
+  - Workshops
+  - Competitions
+- tags (array of strings, e.g. ["Python", "Football"])
+- date (event date)
+- start_time
+- end_time
+- location (string)
+- image_url (event banner/poster)
+- requires_registration (boolean)
+- max_participants (optional)
+- current_participants (number)
+- created_by (admin / group / department)
+- created_at
+- updated_at
+- cancelled (boolean)
+
+Ensure indexes for date, category, and tags for performance.
+
+────────────────────────
+2) EVENTS PAGE UI (UPGRADE, NOT REPLACE)
+────────────────────────
+
+2.1 Category Filters (Top Bar)
+Add filter buttons:
+- All
+- Academic
+- Sports
+- Cultural
+- Workshops
+- Competitions
+
+Filtering must be instant and client-side friendly (no page reload).
+
+2.2 Time & Status Filters
+Add additional filters:
+- Upcoming Events
+- Today
+- This Week
+- Requires Registration
+- Free / Paid (if payment exists, otherwise mark as Free)
+
+2.3 Tag Display
+- Display tags visually on each event card
+- Example: #Python #Music #Football
+- Tags are visual indicators (filtering optional)
+
+────────────────────────
+3) EVENT CARD DESIGN (PROFESSIONAL)
+────────────────────────
+Each event card must display:
+- Event image/poster
+- Event title
+- Category label (color-coded)
+- Tags
+- Date & time
+- Location
+- Short description (preview)
+- Action button:
+  - “Register” or “Apply” if registration is required
+  - “View Details” if not
+
+Use modern card layout with hover effects and Framer Motion animations.
+
+────────────────────────
+4) EVENT DETAILS PAGE (NO COMMENTS)
+────────────────────────
+Enhance event details page with:
+- Full event description
+- Banner image
+- Category & tags
+- Date, time, and location
+- Countdown timer (“Starts in X days”)
+- Registration status
+- Participant count
+- Cancelled badge (if cancelled)
+- “Add to Calendar” button
+- “Save Event” button
+
+DO NOT include comments or discussions.
+
+────────────────────────
+5) REGISTRATION LOGIC
+────────────────────────
+If requires_registration = true:
+- Allow students to register
+- Prevent registration when max_participants is reached
+- Update current_participants in real time
+- Show success confirmation after registration
+- Disable registration if event is cancelled
+
+────────────────────────
+6) SAVE / FAVORITE EVENTS
+────────────────────────
+- Allow students to save/favorite events
+- Create a “Saved Events” section in profile/dashboard
+- Persist saved events in database
+
+────────────────────────
+7) CALENDAR INTEGRATION
+────────────────────────
+Provide “Add to Calendar” support:
+- Google Calendar
+- Apple Calendar
+- ICS file export
+
+Include event title, date, time, and location.
+
+────────────────────────
+8) NOTIFICATIONS (INTEGRATE WITH EXISTING SYSTEM)
+────────────────────────
+Send notifications for:
+- New event created
+- Successful registration
+- Event updates
+- Event cancellation
+- Reminders:
+  - 24 hours before
+  - 1 hour before
+  - 10 minutes before (optional)
+
+Use existing Socket.IO + notification infrastructure.
+
+────────────────────────
+9) PERSONALIZED EVENT RECOMMENDATIONS
+────────────────────────
+Recommend events based on:
+- User department
+- User interests (tags)
+- Previously registered or saved events
+
+Display recommendations on:
+- Dashboard
+- Events page (Recommended for You section)
+
+────────────────────────
+10) UI / UX REQUIREMENTS
+────────────────────────
+- Keep existing design language
+- Clean, minimal, professional
+- Card-based layout
+- Dark / Light mode
+- Fully responsive
+- Skeleton loaders for events
+- Smooth animations (Framer Motion)
+
+────────────────────────
+11) SEED DATA
+────────────────────────
+Add demo events:
+- Different categories
+- With & without registration
+- Online & physical events
+- Events with max participants
+- Saved & registered demo users
+
+────────────────────────
+OUTPUT REQUIREMENTS
+────────────────────────
+- Existing Events & Schedule remains functional
+- No comments/discussion added
+- All new features fully integrated
+- Clean, readable, well-structured code
+- Type-safe TypeScript
+- Ready to run in Replit
+- README updated only for new features

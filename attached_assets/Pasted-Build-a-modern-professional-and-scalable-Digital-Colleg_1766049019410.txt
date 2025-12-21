@@ -1,0 +1,115 @@
+Build a modern, professional, and scalable “Digital College Platform” that works as:
+1) A responsive website
+2) A mobile-ready web app (PWA-ready)
+
+TECH STACK (MANDATORY):
+- Frontend: React + TypeScript
+- Styling: Tailwind CSS
+- Icons: Lucide Icons
+- Animations: Framer Motion
+- Backend: Node.js + Express
+- Database: MongoDB (with Mongoose)
+- Authentication: JWT (student login)
+- Notifications: Real-time using Socket.IO
+- Deployment ready (environment variables, clean structure)
+
+PROJECT GOAL:
+Create a unified digital campus platform for college students that centralizes:
+- Announcements
+- Campus groups
+- Events
+- Notifications
+- Student profiles
+
+DESIGN REQUIREMENTS:
+- Modern university-style UI
+- Clean, minimal, professional
+- Dark mode + light mode
+- Fully responsive (desktop, tablet, mobile)
+- Smooth animations (subtle, professional)
+- Card-based layout
+- Professional typography
+- Dashboard-style interface
+
+MAIN FEATURES TO IMPLEMENT:
+
+1) Authentication
+- Student login & register
+- Fields: full name, email, department, year
+- Secure JWT authentication
+- Protected routes
+
+2) Dashboard (Home)
+- Welcome message with student name
+- Latest college announcements
+- Important notifications highlighted
+- Animated statistics cards (groups, events, notices)
+
+3) Announcements System
+- Admin-posted announcements
+- Title, description, date
+- Priority levels (normal, important, urgent)
+- Real-time update without page refresh
+
+4) Campus Groups
+- Groups by department and interest
+- Join / leave group
+- Group posts feed
+- Group details page
+
+5) Events & Schedule
+- Upcoming college events
+- Event cards with date & location
+- Event details modal/page
+
+6) Notifications System
+- Real-time notifications
+- Notification bell icon
+- Unread badge counter
+- Stored in database per user
+
+7) Student Profile
+- Student information page
+- Editable profile
+- Joined groups list
+
+8) Admin Panel (Simple)
+- Create announcements
+- Create events
+- View registered students
+
+FOLDER STRUCTURE (IMPORTANT):
+- client/
+  - components/
+  - pages/
+  - hooks/
+  - context/
+  - styles/
+- server/
+  - models/
+  - routes/
+  - controllers/
+  - middleware/
+  - config/
+
+CODE QUALITY REQUIREMENTS:
+- Clean, readable, commented code
+- Reusable components
+- Type-safe TypeScript
+- No dummy lorem UI – real structured data
+- Use best practices
+
+EXTRA (OPTIONAL BUT PREFERRED):
+- Role-based access (admin/student)
+- Loading skeletons
+- Error handling with toast notifications
+- Modern navbar with profile dropdown
+
+OUTPUT REQUIREMENTS:
+- Fully working project
+- Ready to run in Replit
+- Clear instructions in README.md
+- Seed data for demo
+
+IMPORTANT:
+Focus on professionalism, clarity, and modern university-level quality.

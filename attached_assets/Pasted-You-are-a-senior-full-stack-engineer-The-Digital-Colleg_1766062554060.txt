@@ -1,0 +1,61 @@
+You are a senior full-stack engineer. 
+
+The Digital College Platform project exists with React + TypeScript + Tailwind + Framer Motion frontend, Node.js + Express backend, MongoDB, JWT authentication, and basic Campus Groups scaffolding.
+
+Task: Fully implement the Campus Groups feature with ALL core and useful extra features, except “view-only for non-members”. Integrate it into the existing project.
+
+Requirements:
+
+1) DATABASE MODELS
+- Group: name, description, department, category, createdBy, members, createdAt
+- GroupPost: group, author, content, createdAt
+
+2) BACKEND ROUTES
+- Groups:
+  - POST /api/groups → create (admin only)
+  - GET /api/groups → list all
+  - GET /api/groups/:id → details
+  - POST /api/groups/:id/join → join group (prevent duplicates)
+  - POST /api/groups/:id/leave → leave group
+- Group Posts:
+  - POST /api/groups/:id/posts → create post (members only)
+  - GET /api/groups/:id/posts → list posts
+  - Admin/group creator can delete posts
+- Protect routes with JWT
+- Validate input, sanitize content, proper JSON responses
+
+3) FRONTEND
+- Groups List Page:
+  - Grid of cards: name, department, category, members count
+  - Join / Leave buttons
+  - Search/filter by department/category
+- Group Details Page:
+  - Show group info and members
+  - Join / Leave buttons
+  - Posts feed
+  - Input to create posts (members only)
+- Components: GroupCard, PostCard
+- Loading skeletons, toast notifications
+- Fully responsive, dark/light mode, smooth animations
+
+4) POST INTERACTIONS & EXTRA
+- Members can post text (optionally images/files)
+- Real-time updates via Socket.IO
+- Pagination or infinite scroll for posts
+- Activity stats (posts count, member activity)
+- Search posts inside a group
+
+5) STATE MANAGEMENT
+- Sync join/leave and posts with backend
+- Update UI instantly
+
+6) SEED DATA
+- Demo groups: Programming Club, AI & ML, Robotics Team, Network Security
+- Include demo members and posts
+
+Output:
+- Fully functional Campus Groups module
+- Clean, maintainable, professional code
+- Integrated with existing project
+- Keep rest of project unchanged
+- No placeholders or dummy logic

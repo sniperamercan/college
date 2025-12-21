@@ -1,0 +1,102 @@
+Your task: **Keep all current Campus Groups features** and **add Telegram-like group chat functionality**, integrating it seamlessly. Include **all optional features**.  
+
+────────────────────────
+1) DATABASE MODELS
+────────────────────────
+- Message model:
+  - group (ref Group)
+  - author (ref User)
+  - content
+  - type: 'text' | 'image' | 'file'
+  - createdAt
+  - editedAt
+- Update Group model to track:
+  - Roles (creator/admin/member)
+  - Pinned messages (optional)
+  - Group rules / description
+  - Last active timestamp per member
+
+────────────────────────
+2) BACKEND / API
+────────────────────────
+- GET /api/groups/:id/messages → list messages (pagination, infinite scroll)
+- POST /api/groups/:id/messages → create new message (members only)
+- PATCH /api/messages/:id → edit message (author/admin only)
+- DELETE /api/messages/:id → delete message (author/admin only)
+- Real-time updates via Socket.IO:
+  - New messages
+  - Edited messages
+  - Deleted messages
+  - Likes/reactions
+- Real-time notifications for new messages to all group members
+- Protect all routes with JWT
+- Validate inputs and sanitize content
+- Return proper JSON with HTTP status codes
+
+────────────────────────
+3) FRONTEND / UI
+────────────────────────
+- Chat feed component:
+  - Scrollable, infinite scroll
+  - Messages grouped by day
+  - Show author avatar, name, timestamp
+  - Edit/delete buttons for allowed users
+  - Smooth hover/animation effects
+- Message input component:
+  - Text box, send button
+  - Optional emoji picker
+  - Optional file/image attachments
+- Group details page:
+  - Display group info (name, description, rules)
+  - Members list with roles (creator/admin/member)
+  - Message feed integrated with chat component
+  - Load more / infinite scroll
+  - Search messages inside the group
+- Real-time updates using Socket.IO
+- Toast notifications for new messages, edits, deletes
+- Responsive design: desktop, tablet, mobile
+- Dark/light mode toggle
+
+────────────────────────
+4) ROLES & PERMISSIONS
+────────────────────────
+- Group creator (admin):
+  - Can delete any message
+  - Can add/remove members
+  - Can assign roles (admin/moderator)
+- Members:
+  - Can send/edit/delete own messages
+  - Can like/react to messages
+- Optional: mute members
+
+────────────────────────
+5) POST & MESSAGE INTERACTIONS
+────────────────────────
+- Like/unlike messages (real-time count)
+- Edit/delete messages (according to roles)
+- Optional reactions / emojis
+- Optional pinned messages
+- Optional “typing…” indicator
+- Highlight unread messages
+- Smooth scroll to newest message
+- Activity stats: messages count, active members
+
+────────────────────────
+6) SEED DATA
+────────────────────────
+- Create demo messages for each existing group
+- Include messages with text and image/file attachments
+- Show different roles (creator, admin, member)
+- Demo emoji reactions/likes
+
+────────────────────────
+OUTPUT REQUIREMENTS
+────────────────────────
+- Fully functional Telegram-like chat integrated into current Groups
+- Keep all existing Campus Groups features intact
+- Clean, readable, maintainable code
+- Professional, hand-coded UI/UX
+- No dummy placeholders
+- Seed data included
+- Real-time updates working
+- Mobile responsive and dark/light mode ready
